@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.login {
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 30px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+label {
+    font-weight: 400;
+    font-size: 18;
+    display: block;
+    text-align: left;
+}
+
+#checkEmail{
+    display: none ;
+    margin-top: 20px;
+}
+
+#checkPass{
+    display: none ;
+    margin-top: 20px;
+}
+
+.form-pass {
+    position: relative;
+}
+
+.pass {
+    padding-right: 40px; 
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 53px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+

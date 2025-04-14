@@ -189,14 +189,42 @@ function binDelete(event) {
 const allMemSave = document.querySelector('.allMem-save');
 allMemSave.addEventListener('click', function() {
     const modal = document.querySelector('#allMember');
+    
+    // Lấy danh sách email của các thành viên còn lại
+    const remainingEmails = updatedMemberList.map(mem => {
+        let foundAccount = accounts.find(account => account.id === mem.userId);
+        return foundAccount.email;
+    });
+
+    // Lọc nhiệm vụ, chỉ giữ nhiệm vụ của các thành viên còn lại
+    const remainingAssignees = updatedMemberList.map(mem => {
+        let foundAccount = accounts.find(account => account.id === mem.userId);
+        return foundAccount.fullName;
+    });
+
+    allTasks = allTasks.filter(task => remainingAssignees.includes(task.assignee));
+
+    // Cập nhật memberList và localStorage
     allProjectLocals[currentUser.id][index].member = updatedMemberList;
     localStorage.setItem("allProjects", JSON.stringify(allProjectLocals));
+    localStorage.setItem("Tasks", JSON.stringify(allTasks));
+    
     memberList = allProjectLocals[currentUser.id][index].member;
 
+    // Đóng modal và render lại
     const modalInstance = bootstrap.Modal.getInstance(modal);
     modalInstance.hide();
-    renderAllMember(updatedMemberList);
-    renderMember(updatedMemberList);
+    renderAllMember(memberList);
+    renderMember(memberList);
+    renderTask(); 
+});
+
+// Thêm sự kiện khi modal đóng mà không lưu
+let modal = document.querySelector('#allMember');
+modal.addEventListener('hidden.bs.modal', function () {
+    // Reset updatedMemberList về memberList ban đầu
+    updatedMemberList = [...memberList];
+    renderAllMember(memberList);
 });
 
 // Render người phụ trách khi thêm nhiệm vụ

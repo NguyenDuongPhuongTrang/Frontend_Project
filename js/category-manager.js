@@ -24,8 +24,23 @@ if (localStorage.getItem("missionClicked") === "true") {
     mission.classList.add("clicked");
 }
 mission.addEventListener("click",function() {
+    myProject.classList.remove("clicked");
+    localStorage.removeItem("myProjectClicked");
     mission.classList.add("clicked");
     localStorage.setItem("missionClicked", "true");
+});
+
+//Dự án cá nhân
+let myProject = document.getElementById("myProject");
+if (localStorage.getItem("myProjectClicked") === "true") {
+    myProject.classList.add("clicked");
+}
+myProject.addEventListener("click", function() {
+    mission.classList.remove("clicked");
+    localStorage.removeItem("missionClicked");
+    myProject.classList.add("clicked");
+    localStorage.setItem("myProjectClicked", "true");
+    window.location.href = 'personal-project.html';
 });
 
 // Phân trang

@@ -20,9 +20,24 @@ if (localStorage.getItem("missionClicked") === "true") {
     mission.classList.add("clicked");
 }
 mission.addEventListener("click", function() {
+    myProject.classList.remove("clicked");
+    localStorage.removeItem("myProjectClicked");
     mission.classList.add("clicked");
     localStorage.setItem("missionClicked", "true");
     window.location.href = 'category-manager.html#';
+});
+
+//Dự án cá nhân
+let myProject = document.getElementById("myProject");
+if (localStorage.getItem("myProjectClicked") === "true") {
+    myProject.classList.add("clicked");
+}
+myProject.addEventListener("click", function() {
+    mission.classList.remove("clicked");
+    localStorage.removeItem("missionClicked");
+    myProject.classList.add("clicked");
+    localStorage.setItem("myProjectClicked", "true");
+    window.location.href = 'personal-project.html';
 });
 
 // Lấy ra index của dự án từ trang trước
@@ -136,7 +151,7 @@ function renderMember(memberList) {
                         <p>${foundAccount.fullName.charAt(0)}${foundAccount.fullName.charAt(1)}</p>
                     </div>
                     <div class="infor-member">
-                        <p class="name-member">${foundAccount.fullName}</p>
+                        <p class="name-member fullName">${foundAccount.fullName}</p>
                         <p class="position-member">${aMember.role}</p>
                     </div>
                 </div>`;

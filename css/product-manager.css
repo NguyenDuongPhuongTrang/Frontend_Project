@@ -189,6 +189,13 @@ body {
     justify-content: center;
 }
 
+.fullName {
+    width: 105px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
 .view-all-member{
     width: 42px;
     height: 42px;

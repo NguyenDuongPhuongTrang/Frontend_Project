@@ -40,3 +40,14 @@ myProject.addEventListener("click", function() {
     window.location.href = 'personal-project.html';
 });
 
+// Initialize the Bootstrap modal
+let modalElement = document.getElementById('modalFixProgress');
+let modal = new bootstrap.Modal(modalElement);
+
+// Add event listeners to all edit icons
+let icons = document.querySelectorAll(".myIcon");
+icons.forEach(icon => {
+    icon.addEventListener('click', function() {
+        modal.show(); // Show the modal using Bootstrap's method
+    });
+});

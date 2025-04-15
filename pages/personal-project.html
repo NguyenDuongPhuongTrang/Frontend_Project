@@ -70,7 +70,7 @@
                         <tr class="list" data-status="">
                             <td class="name-task border">Soạn thảo đề cương dự án</td>
                             <td class="border text-center"><span class="low">Thấp</span></td>
-                            <td class="border text-center">In Progress <span><ion-icon name="create-outline"></ion-icon></span></td>
+                            <td class="border text-center">In Progress <span><ion-icon class="myIcon" name="create-outline"></ion-icon></span></td>
                             <td class="date border">24 - 04</td>
                             <td class="date border">25 - 04</td>
                             <td class="border text-center"><span class="on-schedule">Đúng tiến độ</span></td>
@@ -78,7 +78,7 @@
                         <tr class="list" data-status="">
                             <td class="name-task border">Soạn thảo đề cương dự án</td>
                             <td class="border text-center"><span class="medium">Trung bình</span></td>
-                            <td class="border text-center">In Progress <span><ion-icon name="create-outline"></ion-icon></span></td>
+                            <td class="border text-center">In Progress <span><ion-icon class="myIcon" name="create-outline"></ion-icon></span></td>
                             <td class="date border">24 - 04</td>
                             <td class="date border">25 - 04</td>
                             <td class="border text-center"><span class="high-risk">Rủi ro cao</span></td>
@@ -86,7 +86,7 @@
                         <tr class="list" data-status="">
                             <td class="name-task border">Soạn thảo đề cương dự án</td>
                             <td class="border text-center"><span class="high">Cao</span></td>
-                            <td class="border text-center">Pending <span><ion-icon name="create-outline"></ion-icon></span></td>
+                            <td class="border text-center">Pending <span><ion-icon class="myIcon" name="create-outline"></ion-icon></span></td>
                             <td class="date border">24 - 04</td>
                             <td class="date border">25 - 04</td>
                             <td class="border text-center"><span class="delayed">Trễ hạn</span></td>
@@ -100,7 +100,7 @@
                         <tr class="list" data-status="">
                             <td class="name-task border">Lên lịch kickoff</td>
                             <td class="border text-center"><span class="high">Cao</span></td>
-                            <td class="border text-center">Pending <span><ion-icon name="create-outline"></ion-icon></span></td>
+                            <td class="border text-center">Pending <span><ion-icon class="myIcon" name="create-outline"></ion-icon></span></td>
                             <td class="date border">24 - 04</td>
                             <td class="date border">25 - 04</td>
                             <td class="border text-center"><span class="high-risk">Rủi ro cao</span></td>
@@ -125,19 +125,19 @@
     </div>
 
     <!-- Modal Sửa Trạng Thái -->
-    <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+    <div class="modal fade" id="modalFixProgress" tabindex="-1" aria-labelledby="modalFixProgressLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalDeleteLabel">Xác nhận xóa</h1>
+                    <h1 class="modal-title fs-5" id="modalDeleteLabel">Cập nhật trạng thái</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa nhiệm vụ này?
+                    Xác nhận cập nhật trạng thái nhiệm vụ
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                    <button id="btnDelete" onclick="deleteTask()" type="button" class="btn btn-danger" style="height: 37.6px;" >Xóa</button>
+                    <button id="btnDelete" type="button" class="btn btn-danger" style="height: 37.6px;"data-bs-dismiss="modal" >Xác nhận</button>
                 </div>
             </div>
         </div>
